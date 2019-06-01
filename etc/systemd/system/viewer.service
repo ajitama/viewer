@@ -1,0 +1,16 @@
+[Unit]
+Description=uWSGI instance to serve viewer
+After=network.target
+
+[Service]
+User=root
+KillSignal=SIGTERM
+Environment="PATH=/usr/bin"
+WorkingDirectory=/usr/local/bin/viewer
+#WorkingDirectory=/usr/bin/viewer # centos75
+ExecStart=/usr/bin/uwsgi --ini /usr/local/bin/viewer/viewer.ini
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target

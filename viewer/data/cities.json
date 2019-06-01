@@ -1,0 +1,32 @@
+{
+  "t0921": {
+    "name": "宇都宮",
+    "population": 41295,
+    "date_mod": "2003-8-12"
+  },
+  "t0922": {
+    "name": "小山",
+    "population": 38756,
+    "date_mod": "2003-5-15"
+  },
+  "t0923": {
+    "name": "佐野",
+    "population": 71294,
+    "date_mod": "2003-6-8"
+  },
+  "t0924": {
+    "name": "足利",
+    "population": 27138,
+    "date_mod": "2003-7-21"
+  },
+  "t0925": {
+    "name": "日光",
+    "population": 74682,
+    "date_mod": "2003-4-19"
+  },
+  "t0926": {
+    "name": "下野",
+    "population": 82951,
+    "date_mod": "2003-10-14"
+  }
+}

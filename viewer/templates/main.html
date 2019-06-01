@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block extfiles %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+{% endblock %}
+
+{% block content %}
+{% include "nav.html" %}
+<blockquote>
+	<h3>{{ title }}</h3>
+</blockquote>
+
+<table id="main_table" class="table table-bordered text-nowrap table-hover">
+<thead class="thead-light">
+
+{# table title #}
+<tr>
+{% for key, value in json_rows[0].items() %}
+<th scope="col">{{ key|e }}</th>
+{% endfor %}
+</tr>
+
+<tbody>
+{% for row in json_rows %}
+<tr>
+{% for key, value in row.items() %}
+   <td>{{ value}}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+
+{% block footer %}
+<script type="text/javascript" src="/static/js/json_read.js"></script>
+<script>
+$(document).ready(function() {
+  $('#main_table').DataTable({
+	"emptyTable":     "No data available in table",
+	"processing": true,
+	"loadingRecords": "Loading...",
+	"zeroRecords":    "No matching records found",
+	"paging": true,
+	  "pageLength": 25,
+	"lengthMenu":[[ 25, 50, 75, 100, 200, -1 ], [ 25, 50, 75, 100, 200, "ALL" ]],
+	"sDom":'<"top"ipf>rt<"bottom"l>',
+  });
+} );
+
+</script>
+
+{% endblock %}
